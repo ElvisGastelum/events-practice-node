@@ -1,0 +1,53 @@
+{
+  "name": "events-practice-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:dev": "nodemon --exec npm run test",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElvisGastelum/events-practice-node.git"
+  },
+  "keywords": [
+    "Events",
+    "Practice"
+  ],
+  "author": "ElvisGastelum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElvisGastelum/events-practice-node/issues"
+  },
+  "homepage": "https://github.com/ElvisGastelum/events-practice-node#readme",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
